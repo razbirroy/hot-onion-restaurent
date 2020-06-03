@@ -1,0 +1,22 @@
+
+.menu-style img{
+    width: 60%;
+    height: 65%;
+    
+    
+}
+
+.Card{
+    height: auto;
+    width: 300px;
+    transition: 1s;
+    
+}
+
+.Card:hover{
+    transform: scale(1.3);
+}
+
+.p{
+    background-color: gray;
+}

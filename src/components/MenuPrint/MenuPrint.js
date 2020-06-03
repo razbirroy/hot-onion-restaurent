@@ -1,13 +1,22 @@
 import React from 'react';
 import './MenuPrint.css'
+import {CardDeck, Card} from 'reactstrap'
+
+
 
 const MenuPrint = (props) => {
     const {name, des, price, img} =  props.product
     return (
-        <div className="menu-style">
-            <img src={img} alt=""/>
-        </div>
-    );
+       
+          <div className="Card menu-style col-sm-4">
+                 <img src={img} alt=""/>
+              <div>
+                 <h6>{name}</h6>
+                 <p>{des}</p>
+                 <h4>${price}</h4>
+              </div>   
+           </div>   
+  );
 };
 
 export default MenuPrint;
