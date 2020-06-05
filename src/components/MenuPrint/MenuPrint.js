@@ -1,8 +1,5 @@
 import React from 'react';
 import './MenuPrint.css'
-import {CardDeck, Card} from 'reactstrap'
-
-
 
 const MenuPrint = (props) => {
     const {name, des, price, img} =  props.product

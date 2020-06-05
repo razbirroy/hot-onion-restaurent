@@ -2,6 +2,7 @@ var androids =
 [
     {
       "id": 1,
+	  "category": "Breakfast",
       "name": "Potato Bacon",
 	  "des" : "How we dream about our future",
 	  "price": 23.99,
@@ -10,6 +11,7 @@ var androids =
     },
     {
       "id": 2,
+	  "category" : "Breakfast",
       "name": "Healthy Meal Plan",
 	  "des" : "How we dream about our future",
 	  "price": 9.99,
@@ -18,6 +20,7 @@ var androids =
     },
     {
       "id": 3,
+	  "category" : "Breakfast",
       "name": "Fried Chicken Bento",
 	  "des" : "How we dream about our future",
 	  "price": 6.99,
@@ -25,6 +28,7 @@ var androids =
      },
     {
       "id": 4,
+	  "category" : "Breakfast",
       "name": "Southwestern",
 	  "des" : "How we dream about our future",
 	  "price": 8.99,
@@ -32,6 +36,7 @@ var androids =
     },
     {
       "id": 5,
+	  "category" : "Breakfast",
       "name": "Southwestern",
 	  "des" : "How we dream about our future",
 	  "price": 9.99,
@@ -40,6 +45,7 @@ var androids =
     },
     {
       "id": 6,
+	  "category" : "Breakfast",
       "name": "Bagel and cream cheese",
 	  "des" : "How we dream about our future",
 	  "price": 10.99,
@@ -48,6 +54,7 @@ var androids =
      },
     {
       "id": 7,
+	  "category" : "Lunch",
       "name": "Baked Chicken",
 	  "des" : "How we dream about our future",
 	  "price": 11.99,
@@ -56,7 +63,8 @@ var androids =
      },
     {
       "id": 8,
-       "name": "Chia Power",
+	  "category" : "Lunch",
+      "name": "Chia Power",
 	  "des" : "How we dream about our future",
 	  "price": 37.55,
       "img":"https://dl.dropboxusercontent.com/s/wsu2oeekgpscv1k/lunch2.png?dl=0",
@@ -64,7 +72,8 @@ var androids =
     },
     {
       "id": 9,
-       "name": "Baked Oatmeal",
+	  "category" : "Lunch",
+      "name": "Baked Oatmeal",
 	  "des" : "How we dream about our future",
 	  "price": 17.76,
       "img":"https://dl.dropboxusercontent.com/s/vu60a3fye3mqczg/lunch3.png?dl=0",
@@ -72,6 +81,7 @@ var androids =
     },
     {
       "id": 10,
+	  "category" : "Lunch",
       "name": "Salmon Sandwich",
 	  "des" : "How we dream about our future",
 	  "price": 54.96,
@@ -80,6 +90,7 @@ var androids =
     },
     {
       "id": 11,
+	  "category" : "Lunch",
       "name": "Avocado Toast",
 	  "des" : "How we dream about our future",
 	  "price": 45.96,
@@ -87,7 +98,8 @@ var androids =
     },
     {
       "id": 12,
-       "name": "Avocado BLT",
+	  "category" : "Lunch",
+      "name": "Avocado BLT",
 	  "des" : "How we dream about our future",
 	  "price": 35.76,
       "img":"https://dl.dropboxusercontent.com/s/ahfqcz079quwfbs/lunch6.png?dl=0",
@@ -95,7 +107,8 @@ var androids =
      },
     {
       "id": 13,
-       "name": "Turkey Club",
+	  "category" : "Dinner",
+      "name": "Turkey Club",
 	  "des" : "How we dream about our future",
 	  "price": 47.76,
       "img":"https://dl.dropboxusercontent.com/s/80225372eyt3qly/dinner1.png?dl=0",
@@ -103,7 +116,8 @@ var androids =
      },
     {
       "id": 14,
-     "name": "Chipotle Chicken",
+	  "category" : "Dinner",
+      "name": "Chipotle Chicken",
 	  "des" : "How we dream about our future",
 	  "price": 18.56,
       "img":"https://dl.dropboxusercontent.com/s/d5zoijgqcele640/dinner2.png?dl=0",
@@ -111,7 +125,8 @@ var androids =
      },
     {
       "id": 15,
-       "name": "Cauliflower Banh Mi",
+	  "category" : "Dinner",
+      "name": "Cauliflower Banh Mi",
 	  "des" : "How we dream about our future",
 	  "price": 38.56,
       "img":"https://dl.dropboxusercontent.com/s/xf2id4qbtabz3n5/dinner3.png?dl=0",
@@ -119,6 +134,7 @@ var androids =
     },
     {
       "id": 16,
+	  "category" : "Dinner",
       "name": "Pesto Mozz",
 	  "des" : "How we dream about our future",
 	  "price": 12.56,
@@ -128,6 +144,7 @@ var androids =
     },
 	  {
       "id": 17,
+	  "category" : "Dinner",
       "name": "Edamame Hummus Wrap",
 	  "des" : "How we dream about our future",
 	  "price": 19.56,
@@ -137,6 +154,7 @@ var androids =
     },
 	  {
       "id": 18,
+	  "category" : "Dinner",
       "name": "Sesame Sweet Potato Bowl",
 	  "des" : "How we dream about our future",
 	  "price": 39.56,

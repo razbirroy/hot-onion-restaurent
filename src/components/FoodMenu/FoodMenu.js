@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import duplicateData from '../../duplicateData/index';
 import MenuPrint from '../MenuPrint/MenuPrint';
 import './FoodMenu.css'
-import { Row, Col } from 'react-bootstrap';
+
 
 
 
@@ -15,7 +15,7 @@ const FoodMenu = () => {
     return (
         
               <div className='container'>
-                  <div className='row'>
+                  <div className="row">
                       {
                          element.map(pd => <MenuPrint product = {pd}></MenuPrint>)
                       }
