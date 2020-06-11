@@ -18,7 +18,7 @@ function App() {
         
         <Router>
            <Switch>
-               <Route path="/itemDetails"> 
+               <Route path="/ItemName/:productName"> 
                     <ItemDetails></ItemDetails>
                </Route>
                <Route path="/"> 
