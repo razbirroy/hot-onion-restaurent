@@ -14,18 +14,21 @@ const ItemDetails = () => {
         setStore(seeData)
     }
     
-    const addHandle2 = (props) =>{
-        const cartProduct = [...cart, props];
+    const addHandle2 = (pro) =>{
+        const cartProduct = [...cart, pro];
         setCart(cartProduct);
-        const sameItem = cartProduct.filter(id => id.name === props.name);
+        const sameItem = cartProduct.filter(id => id.name === pro.name);
         const count = sameItem.length;
-        addToDatabaseCart(props.name, count);
+        addToDatabaseCart(pro.name, count);
     }
 
-    const deletHandel = () => {
-        const savedCart = getDatabaseCart();
-        const itemName = Object.keys(savedCart)
-        console.log(itemName)
+    const decreaseHandel = (val) => {
+       const save = cart.map(id => id);
+        save.pop();
+        setCart(save);
+        localStorage.clear();
+        const length = save.length;
+        addToDatabaseCart(val.name, length)
     }
 
    useEffect(()=>{
@@ -40,7 +43,7 @@ const ItemDetails = () => {
             </div>
             <div>
                 <button onClick={()=> addHandle2(store)}>+</button>
-                <button onClick={()=> deletHandel()}>-</button>
+                <button onClick={()=> decreaseHandel(store)}>-</button>
                 <h2>{cart.length}</h2>
             </div>
         </div>
