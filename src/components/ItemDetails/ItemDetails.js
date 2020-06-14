@@ -4,12 +4,16 @@ import duplicateData from '../../duplicateData';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import {addToDatabaseCart, getDatabaseCart} from '../../utilities/databaseManager'
+import './ItemDetails.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 
 const ItemDetails = () => {
     const {productName} = useParams();
     const [store, setStore] = useState([]);
     const [cart, setCart] = useState([]);
     const [add, setAdd] = useState([])
+   
     useEffect(()=>{
       const bringData = getDatabaseCart();
       const itemName = Object.keys(bringData);
@@ -47,19 +51,34 @@ const ItemDetails = () => {
    useEffect(()=>{
        addHandle();
    }, [])
-    const {name} = store;
-    
-    return (
-        <div>
-            <div>
-              <h1>{name}</h1>
+
+  const {name, description, img, price} = store;
+  return (
+        <div className="main-container">
+         <div>
+            <div className ="others">
+                <div className="for-word">
+                   <h1>{name}</h1>
+                   <h7 style={{color: "gray"}}>{description}</h7>
+                 </div>
+                 <br/>
+                 <div className="button btn-group btn-group-lg">
+                    <h3>${price}</h3>
+                    <button type="button" className="btn btn-primary" onClick={()=> addHandle2(store)}>+</button>
+                     <h3>{cart.length}</h3>
+                     <button type="button" className="btn btn-primary" onClick={()=> decreaseHandel(store)}>-</button>
+                    {/* <h3>{add.length}</h3> */}
+                 </div>
             </div>
-            <div>
-                <button onClick={()=> addHandle2(store), useEffect}>+</button>
-                <button onClick={()=> decreaseHandel(store)}>-</button>
-                <h2>{cart.length}</h2>
-                <h2>{add.length}</h2>
+            <br/>
+             <div className="cart">
+                <button className="cart-design"><FontAwesomeIcon className="font" icon={faCartPlus}/> Add</button>
+             </div>
+           </div> 
+            <div className="images">
+               <img src={img} alt=""/>
             </div>
+            
         </div>
         
     );
