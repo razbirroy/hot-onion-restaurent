@@ -14,16 +14,15 @@ import ItemDetails from './components/ItemDetails/ItemDetails';
 
 function App() {
   return (
-    <div className="App">
-        
+     <div className="App">
         <Router>
            <Switch>
-               <Route path="/ItemName/:productName"> 
-                    <ItemDetails></ItemDetails>
-               </Route>
+              <Route path="/ItemName/:productName"> 
+                 <ItemDetails></ItemDetails>
+              </Route>
                <Route path="/"> 
-                 <HeaderTop></HeaderTop>
-                 <DifferentTime></DifferentTime>
+                  <HeaderTop></HeaderTop>
+                  <DifferentTime></DifferentTime>
                </Route>
            </Switch>
         </Router>

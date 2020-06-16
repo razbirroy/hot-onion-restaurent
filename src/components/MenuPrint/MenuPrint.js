@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 
 const MenuPrint = (props) => {
-  console.log(props.product.id)
   const {name, des, price, img } =  props.product
     return (
       

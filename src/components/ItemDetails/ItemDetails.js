@@ -6,7 +6,9 @@ import { useEffect } from 'react';
 import {addToDatabaseCart, getDatabaseCart} from '../../utilities/databaseManager'
 import './ItemDetails.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus, faCommentDollar } from '@fortawesome/free-solid-svg-icons'
+import HeaderTop from '../HeaderTop/HeaderTop';
+
 
 const ItemDetails = () => {
     const {productName} = useParams();
@@ -18,29 +20,34 @@ const ItemDetails = () => {
       const bringData = getDatabaseCart();
       const itemName = Object.keys(bringData);
       const previousCart = itemName.map(exist => {
-          const item = duplicateData.filter(pd => pd.name === exist);
+          const item = duplicateData.find(pd => pd.name === exist);
           return item;
       },)
-          console.log(previousCart);
+         console.log(previousCart);
           setAdd(previousCart);
     }, [])
-    
+    const cartHandle = () =>{
+        console.log("clicked")
+    }
+
     const addHandle = () =>{
         const seeData = duplicateData.find(id => id.name === productName);
         setStore(seeData)
     }
     
-    const addHandle2 = (pro) =>{
+    const increaseButton = (pro) =>{
+        //console.log(pro)
         const cartProduct = [...cart, pro];
+        console.log(cartProduct);
         setCart(cartProduct);
         const sameItem = cartProduct.filter(id => id.name === pro.name);
         const count = sameItem.length;
         addToDatabaseCart(pro.name, count);
     }
 
-    const decreaseHandel = (val) => {
+    const decreaseButton = (val) => {
         const save = cart.map(id => id);
-        console.log(save)
+        //console.log(save)
         save.pop();
         setCart(save);
         const newCart = save.filter(find => find.name === val.name);
@@ -64,21 +71,26 @@ const ItemDetails = () => {
                  <br/>
                  <div className="button btn-group btn-group-lg">
                     <h3>${price}</h3>
-                    <button type="button" className="btn btn-primary" onClick={()=> addHandle2(store)}>+</button>
+                    <button type="button" className="btn btn-primary" onClick={()=> increaseButton (store)}>+</button>
                      <h3>{cart.length}</h3>
-                     <button type="button" className="btn btn-primary" onClick={()=> decreaseHandel(store)}>-</button>
+                     <button type="button" className="btn btn-primary" onClick={()=> decreaseButton(store)}>-</button>
                     {/* <h3>{add.length}</h3> */}
                  </div>
             </div>
             <br/>
              <div className="cart">
-                <button className="cart-design"><FontAwesomeIcon className="font" icon={faCartPlus}/> Add</button>
+               <div>
+                 <button className="cart-design" onClick = {() =>{cartHandle()}} ><FontAwesomeIcon className="font" icon={faCartPlus}/> Add</button>
+                
+               </div>
              </div>
            </div> 
             <div className="images">
                <img src={img} alt=""/>
             </div>
-            
+            <div>
+              
+            </div>
         </div>
         
     );

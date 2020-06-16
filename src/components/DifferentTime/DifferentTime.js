@@ -24,10 +24,10 @@ const DifferentTime = () => {
    
    return(
            <div>
-                <div className="pressButton">
-                    <button onClick={() => addHandle("Breakfast")}>Breakfast</button>
-                    <button onClick={() => addHandle("Lunch")}>Lunch</button>
-                    <button onClick={() => addHandle("Dinner")}>Dinner</button>
+                <div className="pressButton btn-group">
+                    <button className="btn btn-secondary" onClick={() => addHandle("Breakfast")}>Breakfast</button>
+                    <button className="btn btn-secondary" onClick={() => addHandle("Lunch")}>Lunch</button>
+                    <button className="btn btn-secondary" onClick={() => addHandle("Dinner")}>Dinner</button>
                 </div>    
              <div className='row'>
                 {
