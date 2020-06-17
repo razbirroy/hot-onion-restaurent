@@ -7,15 +7,28 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import { getDatabaseCart, addToDatabaseCart } from '../../utilities/databaseManager';
 import duplicateData from '../../duplicateData';
 import { useState } from 'react';
+import { useEffect } from 'react';
+import ItemDetails from '../ItemDetails/ItemDetails';
 
 
 
-const HeaderTop = () => {
-  // const fake20 = duplicateData.slice(0, 18);
-  //  const [item, setItem] = useState(fake20);
-  //  const cartHandel = () =>{
-  //     console.log("printed");
-  //  }
+const HeaderTop = (props) => {
+  console.log(props.store)
+  // const [add, setAdd] = useState([])
+  
+  //   useEffect(()=>{
+  //     const bringData = getDatabaseCart();
+  //     const itemName = Object.keys(bringData);
+  //     const previousCart = itemName.map(exist => {
+  //         const item = duplicateData.find(pd => pd.name === exist);
+  //         return item;
+  //     },)
+  //        console.log(previousCart);
+  //         setAdd(previousCart);
+  //   }, [])
+  //   const cartHandle = () =>{
+  //       console.log("clicked")
+  //   }
     return (
       <div>
         <div className="Main">
@@ -23,7 +36,7 @@ const HeaderTop = () => {
                  <img src={logo} alt=""/>
              </div>
              <div className="right-side">
-               <h7> <FontAwesomeIcon className="shopping-cart" icon={faCartPlus}/> </h7>
+               <h7> {props.store.length}<FontAwesomeIcon className="shopping-cart" icon={faCartPlus}/> </h7>
                  <button className="for-login">Login</button>
                  <button className="for-signUp">Sign Up</button>
              </div>
@@ -32,9 +45,7 @@ const HeaderTop = () => {
              </div>
         </div>
         <div>
-            {
-              
-            }
+          
         </div>
      </div> 
     );

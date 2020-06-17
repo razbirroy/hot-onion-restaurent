@@ -10,7 +10,8 @@ import { faCartPlus, faCommentDollar } from '@fortawesome/free-solid-svg-icons'
 import HeaderTop from '../HeaderTop/HeaderTop';
 
 
-const ItemDetails = () => {
+const ItemDetails = (props) => {
+    
     const {productName} = useParams();
     const [store, setStore] = useState([]);
     const [cart, setCart] = useState([]);
@@ -23,12 +24,12 @@ const ItemDetails = () => {
           const item = duplicateData.find(pd => pd.name === exist);
           return item;
       },)
-         console.log(previousCart);
+        // console.log(previousCart);
           setAdd(previousCart);
     }, [])
-    const cartHandle = () =>{
-        console.log("clicked")
-    }
+    // const cartHandle = () =>{
+    //     console.log("clicked")
+    // }
 
     const addHandle = () =>{
         const seeData = duplicateData.find(id => id.name === productName);
@@ -38,9 +39,10 @@ const ItemDetails = () => {
     const increaseButton = (pro) =>{
         //console.log(pro)
         const cartProduct = [...cart, pro];
-        console.log(cartProduct);
+        //console.log(cartProduct);
         setCart(cartProduct);
         const sameItem = cartProduct.filter(id => id.name === pro.name);
+        //console.log(sameItem)
         const count = sameItem.length;
         addToDatabaseCart(pro.name, count);
     }
@@ -74,13 +76,13 @@ const ItemDetails = () => {
                     <button type="button" className="btn btn-primary" onClick={()=> increaseButton (store)}>+</button>
                      <h3>{cart.length}</h3>
                      <button type="button" className="btn btn-primary" onClick={()=> decreaseButton(store)}>-</button>
-                    {/* <h3>{add.length}</h3> */}
+                     <h3>{add.length}</h3>
                  </div>
             </div>
             <br/>
              <div className="cart">
                <div>
-                 <button className="cart-design" onClick = {() =>{cartHandle()}} ><FontAwesomeIcon className="font" icon={faCartPlus}/> Add</button>
+                 <button className="cart-design" onClick = {() => props.headerCart(add)} ><FontAwesomeIcon className="font" icon={faCartPlus}/> Add</button>
                 
                </div>
              </div>
@@ -89,7 +91,7 @@ const ItemDetails = () => {
                <img src={img} alt=""/>
             </div>
             <div>
-              
+               
             </div>
         </div>
         

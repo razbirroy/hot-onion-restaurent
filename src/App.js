@@ -9,19 +9,24 @@ import {
  from "react-router-dom";
 import DifferentTime from './components/DifferentTime/DifferentTime';
 import ItemDetails from './components/ItemDetails/ItemDetails';
+import { useState } from 'react';
 
 
 
 function App() {
-  return (
+   const [store, setStore] = useState([]);
+   const headerCart = (item) =>{
+     setStore(item); 
+   }
+    return (
      <div className="App">
         <Router>
            <Switch>
               <Route path="/ItemName/:productName"> 
-                 <ItemDetails></ItemDetails>
+                 <ItemDetails headerCart = {headerCart}></ItemDetails>
               </Route>
                <Route path="/"> 
-                  <HeaderTop></HeaderTop>
+                  <HeaderTop store = {store}></HeaderTop>
                   <DifferentTime></DifferentTime>
                </Route>
            </Switch>
