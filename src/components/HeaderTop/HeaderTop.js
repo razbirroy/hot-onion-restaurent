@@ -14,6 +14,10 @@ import ItemDetails from '../ItemDetails/ItemDetails';
 
 const HeaderTop = (props) => {
   console.log(props.store)
+ 
+//  useEffect(()=>{
+//     console.log("renders")
+//  },[props.store.length]);
   // const [add, setAdd] = useState([])
   
   //   useEffect(()=>{
