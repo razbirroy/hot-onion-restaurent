@@ -9,7 +9,6 @@ import {
  from "react-router-dom";
 import DifferentTime from './components/DifferentTime/DifferentTime';
 import ItemDetails from './components/ItemDetails/ItemDetails';
-import LoginForm from './components/LoginForm/LoginForm';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import SignIn from './components/Auth/SignIn';
@@ -19,7 +18,6 @@ import SignUp from './components/Auth/SignUp'
 
 function App() {
    const [store, setStore] = useState([]);
-   
    const headerCart = (item) =>{
      setStore(item); 
      console.log(item)
@@ -30,9 +28,6 @@ function App() {
            <Switch>
               <Route path="/ItemName/:productName"> 
                  <ItemDetails headerCart = {headerCart}></ItemDetails>
-              </Route>
-              <Route path="/login">
-                 <LoginForm></LoginForm>  
               </Route>
               <Route path ="/signIn">
                  <SignIn></SignIn>

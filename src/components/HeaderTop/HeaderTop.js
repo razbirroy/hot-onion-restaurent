@@ -9,7 +9,7 @@ import duplicateData from '../../duplicateData';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import ItemDetails from '../ItemDetails/ItemDetails';
-
+import { NavLink } from 'react-router-dom';
 
 
 const HeaderTop = (props) => {
@@ -41,8 +41,8 @@ const HeaderTop = (props) => {
              </div>
              <div className="right-side">
                <h7> {props.store.length}<FontAwesomeIcon className="shopping-cart" icon={faCartPlus}/> </h7>
-                 <button className="for-login">Login</button>
-                 <button className="for-signUp">Sign Up</button>
+                <NavLink to ='/signIn'><button className="for-login">Login</button></NavLink> 
+                <NavLink to ='/signUp'><button to ='/signup' className="for-signUp">Sign Up</button></NavLink> 
              </div>
              <div className="single-banner">
                 <img src={banner} alt=""/>
